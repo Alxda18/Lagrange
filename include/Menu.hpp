@@ -1,80 +1,87 @@
-class Menu
-{
-private:
-    /* data */
+#include <iostream>
+#include <Interpolacion.hpp>
+
+class Menu {
 public:
-    Menu(/* args */) {}
-    ~Menu() {}
+    Menu();  // Constructor
+    void ejecutarMenu();
+
+private:
+    Interpolacion interpolacion;  // Objeto de la clase Interpolacion
+    int grado;
+    bool datosIngresados;
 };
 
-#include <iostream>
-#include <cstdlib>
-#include <iomanip>
-#include <cmath>
+Menu::Menu() : datosIngresados(false) {
+    // Constructor
+}
 
-using namespace std;
+void Menu::ejecutarMenu() {
+    int opcion;
+    bool repetir = true;
 
-do {
-        system("cls");
-        
-        // Texto del menú que se verá cada vez
-        cout << "\n\nBienvenido a la interpolacion con espaciamiento variable " << endl;
-        cout << "Opcion 1. Ingresar valores " << endl;
-        cout << "Opcion 2. Calcular Polinomio" << endl;
-        cout << "Opcion 3. Mostrar Datos Tabulados" << endl;
-        cout << "Opcion 4 Mostrar forumla" << endl;
-        cout << "0. SALIR" << endl;
-       
-        cout << "\nIngrese una opcion: ";
-        cin >> opcion;
-        
+    do {
+        std::cout << "\n\nBienvenido a la interpolacion con espaciamiento variable " << std::endl;
+        std::cout << "Opcion 1. Ingresar valores " << std::endl;
+        std::cout << "Opcion 2. Calcular Polinomio" << std::endl;
+        std::cout << "Opcion 3. Mostrar Datos Tabulados" << std::endl;
+        std::cout << "Opcion 4. Mostrar fórmula" << std::endl;
+        std::cout << "0. SALIR" << std::endl;
+
+        std::cout << "\nIngrese una opcion: ";
+        std::cin >> opcion;
+
         switch (opcion) {
             case 1:
-                // Valores              
-                ingresarDatos(datos, grado);
-                datosIngresados = true; // Marcar que los datos se han ingresado
-                system("pause"); 
+                // Valores
+                std::cout << "Ingrese el grado del polinomio (Menor igual a " << Interpolacion::MAX_GRADO << "): ";
+                std::cin >> grado;
+
+                if (grado > Interpolacion::MAX_GRADO) {
+                    std::cout << "El grado del polinomio no puede ser mayor de " << Interpolacion::MAX_GRADO << ".\n";
+                } else {
+                    interpolacion.ingresarDatos(grado);
+                    datosIngresados = true;
+                }
                 break;
 
             case 2:
-                // Lista de instrucciones de la opción 2
+                // Calcular Polinomio
                 if (!datosIngresados) {
-                    cout << "Error: Debes ingresar datos primero (Opcion 1).\n";
+                    std::cout << "Error: Debes ingresar datos primero (Opcion 1).\n";
                 } else {
                     double valorInterpolacion;
-                    cout << "\nIngrese el valor para la interpolación (x): ";
-                    cin >> valorInterpolacion;
-                    resultadoInterpolacion = calcularPolinomio(datos, grado, valorInterpolacion);
-                    cout << "El resultado de la interpolacion en el valor x = " << valorInterpolacion << " es: " << resultadoInterpolacion << endl;
+                    std::cout << "\nIngrese el valor para la interpolación (x): ";
+                    std::cin >> valorInterpolacion;
+                    double resultadoInterpolacion = interpolacion.calcularPolinomio(valorInterpolacion, grado);
+                    std::cout << "El resultado de la interpolacion en el valor x = " << valorInterpolacion << " es: " << resultadoInterpolacion << std::endl;
                 }
-
-                system("pause>nul"); // Pausa
                 break;
 
             case 3:
-                // MostDatos               
+                // Mostrar Datos Tabulados
                 if (!datosIngresados) {
-                    cout << "Error: Debes ingresar datos primero (Opción 1).\n";
+                    std::cout << "Error: Debes ingresar datos primero (Opción 1).\n";
                 } else {
-                    mostrarTabla(datos, grado, grado);
+                    interpolacion.mostrarTabla(grado);
                 }
-
-                system("pause"); // Pausa            
                 break;
 
             case 4:
-                // Formula              
+                // Mostrar Fórmula
                 if (!datosIngresados) {
-                    cout << "Error: Debes ingresar datos primero (Opción 1).\n";
+                    std::cout << "Error: Debes ingresar datos primero (Opción 1).\n";
                 } else {
-                    mostrarFormulaGeneral(datos, grado);
+                    interpolacion.mostrarFormulaGeneral(grado);
                 }
-
-                system("pause"); // Pausa                
                 break;
 
             case 0:
                 repetir = false;
                 break;
-        }        
+            
+            default:
+                std::cout << "Opción no válida. Inténtelo de nuevo.\n";
+        }
     } while (repetir);
+}
