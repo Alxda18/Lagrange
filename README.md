@@ -27,6 +27,46 @@ Para la funcion tabular. Obtener el valor de y para x = 2.
 
 **Explicacion del programa**
 
-Al correr el progrma este aparecera con una calida bienbenida, seguido nos mostrara el menu en donde nos aparece 4 opciones difentes 
+    1. Uso de Bibliotecas:
 
- 
+	•	El código incluye las bibliotecas <iostream> y <Interpolacion.hpp>. La última parece ser un archivo de encabezado que contiene la definición de la clase Interpolacion
+
+	**2.	Declaración de Clase Menu:**
+
+	•	Se declara la clase Menu, que tiene un objeto de la clase Interpolacion, así como algunas variables miembro como grado y datosIngresados.
+
+	**3.	Constructor Menu::Menu():**
+
+	•	El constructor inicializa datosIngresados en false.
+
+	**4.	Método Menu::ejecutarMenu():**
+
+	•	Este método contiene un bucle do-while que presenta un menú interactivo al usuario.
+
+	**5.	Menú de Opciones:**
+
+	•	Las opciones del menú incluyen:
+
+	•	Opción 1: Ingresar valores para la interpolación, incluido el grado del polinomio.
+
+	•	Opción 2: Calcular el polinomio interpolante para un valor dado de .
+
+	•	Opción 3: Mostrar los datos tabulados utilizados para la interpolación.
+
+	•	Opción 4: Mostrar la fórmula general del polinomio interpolante.
+
+	•	Opción 0: Salir del programa.
+
+	**6.	Implementación de Opciones:**
+
+	•	Cada opción del menú está implementada en un bloque switch.
+
+	•	Se verifica si los datos han sido ingresados antes de realizar ciertas operaciones.
+
+	7.	**Uso de la Clase Interpolacion:**
+
+	•	La clase Interpolacion se utiliza para realizar la interpolación y mostrar los resultados.
+
+	**8.	Bucle do-while:**
+
+	•	El bucle continúa hasta que el usuario elige salir (opción 0).
