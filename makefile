@@ -1,6 +1,8 @@
-bin/main : src/main.cpp include/*
-	g++ src/main.cpp -o bin/main -I include
+CXX = g++
+all: main
 
-run : bin/main
+bin/main: src/main.cpp include/*
+	$(CXX) $< -o $@ -I include
 
-	./bin/main
+run: bin/main
+	./$<
