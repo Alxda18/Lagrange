@@ -1,10 +1,8 @@
-CC = g++
-CFLAGS = -Wall -I./include
-
+CXX = g++
 all: main
 
-main: src/main.cpp src/Menu.cpp src/Interpolacion.cpp
-    $(CC) $(CFLAGS) $^ -o $@
+bin/main: src/main.cpp include/*
+	$(CXX) $< -o $@ -I include
 
-clean:
-    rm -f main
+run: bin/main
+	./$<
