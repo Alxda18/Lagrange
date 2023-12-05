@@ -1,17 +1,66 @@
-# Lagrange
+# Método Lagrange
+
+
 ## Este es el Proyecto final de las materias POO y Métodos numéricos.
+
+![image](assets/images/Ceti.png)
 ## Integrantes del equipo 
-![image](https://github.com/colomosceti/practica-dino-chrome-EdgarCuarenta/assets/143459565/bd6bf12a-4c6e-4000-830f-b4ca3fdd7ce7)
 
-#### Alexis Daniel Cortes Tavera 22310259
-#### Edgar Javier Fregoso Cuarenta 22310285
 
-En análisis numérico, el polinomio de Lagrange, llamado así en honor a Joseph-Louis de Lagrange, es una forma de presentar el polinomio que interpola un conjunto de puntos dados. Lagrange publicó este resultado en 1795, pero lo descubrió Edward Waring en 1779 y fue redescubierto más tarde por Leonhard Euler en 1783.1 Dado que no existe un único polinomio interpolador para un determinado conjunto de puntos, resulta algo engañoso llamar a este polinomio el polinomio interpolador de Lagrange. Un nombre más apropiado es interpolación polinómica en la forma de Lagrange.
+* Alexis Daniel Cortes Tavera 22310259
+* Edgar Javier Fregoso Cuarenta 22310285
+
+## Historia
+El polinomio de Lagrange, llamado así en honor a Joseph-Louis de Lagrange, es una forma de presentar el polinomio que interpola un conjunto de puntos dados. 
+
+
+Dado que no existe un único polinomio interpolador para un determinado conjunto de puntos, un nombre más apropiado es interpolación polinómica en la forma de Lagrange.
+
+
+
 **¿Para que sirve?**
 
-El sistema de Lagrange, también conocido como puntos de Lagrange, es utilizado en el campo de la mecánica celeste para identificar ubicaciones específicas en el espacio donde las fuerzas gravitacionales combinadas de dos cuerpos celestes producen condiciones estables.
+El sistema de Lagrange, es utilizado en el campo de la mecánica celeste para identificar ubicaciones específicas en el espacio donde las fuerzas de dos cuerpos celestes producen condiciones estables.
 
-**Pasos para una buena compilacion :)**
+
+## Ejecución
+
+![Comando Compilacion](assets/images/compilacion.png)
+
+
++ Deberemos compilar en una terminal el siguiente comando, el cual nos ejecutara el menú principal 
+
+
+![Comando Menu](assets/images/Menu.png)
+> [!IMPORTANT] 
+> Se deben ingresar las opciones 1 y 2 en conjunto antes de realizar las siguientes opciones
+
++ Aquí podemos ver el menú principal con las opciones 
+
+
+
+![IngresoX](assets/images/x.png) ![IngresoY](assets/images/y.png)
+
+> [!NOTE]
+> Se debe tener un conocimiento básico sobre el funcionamiento de este metodo ya que una parte fundamental es conocer el grado del polinomio para determinar los sumantes, e ingresar ese valor en ambas opciones
+
++ Una vez seleccionada opcion 1 ó 2, se preguntara el grado de polinomio, lo ingresamos y calculará la cantidad de datos que debe recibir del usuario para hacer el calculo 
+
+![IngresoX](assets/images/DX.png) ![IngresoY](assets/images/DY.png)
+
++ Ahora Verificaremos con las opciones 4 y 5 los datos tabulados, todo es correcto, ahora comprobemos la formula que se usara para este caso (Varía según el grado de polinomio)
+
+![Formula](assets/images/Formula.png)
+
++ Para el Calculo de la interpolación usaremos la opcion 3, la cual nos preguntará cual es el valor que queremos calcular, para este ejemplo será 11
+
+![Resultado](assets/images/Res.png)
+
+**Comprobación**
+
+![Comp](assets/images/Comp.png)
+
+## Reto practico
 
 Para la funcion tabular. Obtener el valor de y para x = 2.
 
@@ -23,50 +72,3 @@ Para la funcion tabular. Obtener el valor de y para x = 2.
 
 
 ![Captura de pantalla 2023-12-04 013426](https://github.com/Alxda18/Lagrange/assets/143459565/08c2ee74-7de2-4ddc-9f25-bb0797f3af44)
-
-
-**Explicacion del programa**
-
-    1. Uso de Bibliotecas:
-
-	•	El código incluye las bibliotecas <iostream> y <Interpolacion.hpp>. La última parece ser un archivo de encabezado que contiene la definición de la clase Interpolacion
-
-	**2.	Declaración de Clase Menu:**
-
-	•	Se declara la clase Menu, que tiene un objeto de la clase Interpolacion, así como algunas variables miembro como grado y datosIngresados.
-
-	**3.	Constructor Menu::Menu():**
-
-	•	El constructor inicializa datosIngresados en false.
-
-	**4.	Método Menu::ejecutarMenu():**
-
-	•	Este método contiene un bucle do-while que presenta un menú interactivo al usuario.
-
-	**5.	Menú de Opciones:**
-
-	•	Las opciones del menú incluyen:
-
-	•	Opción 1: Ingresar valores para la interpolación, incluido el grado del polinomio.
-
-	•	Opción 2: Calcular el polinomio interpolante para un valor dado de .
-
-	•	Opción 3: Mostrar los datos tabulados utilizados para la interpolación.
-
-	•	Opción 4: Mostrar la fórmula general del polinomio interpolante.
-
-	•	Opción 0: Salir del programa.
-
-	**6.	Implementación de Opciones:**
-
-	•	Cada opción del menú está implementada en un bloque switch.
-
-	•	Se verifica si los datos han sido ingresados antes de realizar ciertas operaciones.
-
-	7.	**Uso de la Clase Interpolacion:**
-
-	•	La clase Interpolacion se utiliza para realizar la interpolación y mostrar los resultados.
-
-	**8.	Bucle do-while:**
-
-	•	El bucle continúa hasta que el usuario elige salir (opción 0).
