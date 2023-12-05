@@ -1,0 +1,26 @@
+@startuml Lagrange
+
+Class Menu
+Class Lagrange
+Class PuntosX
+Class PuntosY
+
+
+Menu *-- Lagrange
+Lagrange *-- PuntosX
+Lagrange *-- PuntosY
+
+Class Menu { 
+    +PuntosX()
+    +PuntosY()
+    +Lagrange()
+    }
+Class Lagrange{ 
+    + datos() 
+    }
+Class PuntosX{
+    + grado() 
+    }
+Class PuntosY{
+    + grado() 
+    }
