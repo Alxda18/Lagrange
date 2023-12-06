@@ -1,7 +1,7 @@
-#include "../include/Menu.hpp"
+#include "../include/MenuP.hpp"
 
 int main() {
-    Menu menu;
-    menu.ejecutarMenu();
+    MenuP Menu;
+    Menu.MostrarMP();
     return 0;
 }
