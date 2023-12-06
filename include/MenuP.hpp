@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include "Menu.hpp"
-#include <conio.h>
+
 
 using namespace std;
 
@@ -16,10 +16,9 @@ public:
     Menu ejecutarMenu1;
 };
 void MenuP::MostrarMP(){
-    
     do
     {
-        system("cls");
+        
         cout << "Opcion 1 - Ejecutar Programa\n";
         cout << "Opcion 2 - Acerca de Método Lagrange\n";
         cout << "Opcion 3 - Salir \n\n";
@@ -33,7 +32,6 @@ void MenuP::MostrarMP(){
             
             cout << "Ejecutando Programa ... \n";
             ejecutarMenu1.ejecutarMenu();
-            system("cls");
             break;
 
         case 2:
@@ -43,7 +41,7 @@ void MenuP::MostrarMP(){
             break;
         case 3:
            
-            cout << "Gracias por usar el prrograma, hasta pronto.\n";
+            cout << "\n\nGracias por usar el prrograma, hasta pronto.\n\n";
             break;
         default:
         

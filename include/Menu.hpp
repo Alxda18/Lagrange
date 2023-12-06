@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include "Lagrange.hpp"
-#include <conio.h>
+
 
 class Menu
 {
@@ -29,7 +29,6 @@ void Menu::ejecutarMenu()
 
     do
     {
-        system("cls");
         std::cout << "\n\nBienvenido a la interpolacion con espaciamiento variable " << std::endl;
         std::cout << "Opcion 1. Ingresar valores de x " << std::endl;
         std::cout << "Opcion 2. Ingresar valores de y " << std::endl;
@@ -82,7 +81,6 @@ void Menu::ejecutarMenu()
                     lagrange.datos[i][1] = puntosY.datos[i];
                 }
             }
-            system("cls");
             break;
 
         case 3:
@@ -98,7 +96,6 @@ void Menu::ejecutarMenu()
                 double resultadoInterpolacion = lagrange.calcularPolinomio(valorInterpolacion, grado);
                 std::cout << "El resultado de la interpolacion en el valor x = " << valorInterpolacion << " es: " << resultadoInterpolacion << std::endl;
             }
-            system("cls");
             break;
 
         case 4:
@@ -108,7 +105,6 @@ void Menu::ejecutarMenu()
             }
             else
             {
-                system("cls");
                 puntosX.mostrarTabla(grado);
             }
             break;
@@ -120,7 +116,6 @@ void Menu::ejecutarMenu()
             }
             else
             {
-                system("cls");
                 puntosY.mostrarTabla(grado);
             }
             break;
@@ -132,7 +127,6 @@ void Menu::ejecutarMenu()
             }
             else
             {
-                system("cls");
                 lagrange.mostrarFormulaGeneral(grado);
             }
             break;
