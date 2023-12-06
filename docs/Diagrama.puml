@@ -1,15 +1,19 @@
 @startuml Lagrange
 
 Class Menu
+Class MenuP
 Class Lagrange
 Class PuntosX
 Class PuntosY
 
-
+MenuP *-- Menu
 Menu *-- Lagrange
 Lagrange *-- PuntosX
 Lagrange *-- PuntosY
 
+Class MenuP{
+    +ejecutarMenu1()
+}
 Class Menu { 
     +PuntosX()
     +PuntosY()
